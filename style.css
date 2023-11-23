@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #FFF3DA;
+}
+
+.headerTitle{
+    font-size: 5em;
+    font-weight: bold;
+    color: #4f6a7e;
+    margin-top: -100px;
+    margin-bottom:100px;
+}
+
+.game-container{
+   border: 1px solid #C4DFDF;
+   overflow: hidden;
+   padding:5px;
+   background-color: #C4DFDF;
+   border-radius:1vmin;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    background-color: #C4DFDF;
+}
+
+.cell{
+    width: 77px;
+    height: 77px;
+    background-color: #E3F4F4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #5e5e5e;
+    font-weight: bold;
+    border-radius:1vmin;
+}
+
+.score-container{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+/*Score*/
+.score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#C4DFDF;
+    padding: 5px;
+    border-radius:1vmin;
+}
+.score-highlight{
+    color:#E3F4F4;
+    font-weight: bold;
+    font-size: 24px;
+}
+#current-score,#high-score{
+    color:white;
+    font-size:18;
+    font-weight:bold;
+}
+/**/
+.cell[data-value="2"]{
+    background-color: #A2CDB0;
+}
+
+.cell[data-value="4"]{
+    background-color: #F1C27B;
+}
+
+.cell[data-value="8"]{
+    background-color: #FF9B9B;
+}
+
+.cell[data-value="16"]{
+    background-color: #FFD966;
+}
+
+.cell[data-value="32"]{
+    background-color: #739bb9;
+}
+
+.cell[data-value="64"]{
+    background-color: #b49898;
+}
+
+.cell[data-value="128"]{
+    background-color: #c973b8;
+}
+
+.cell[data-value="256"]{
+    background-color: #7b947b;
+}
+
+.cell[data-value="512"]{
+    background-color: #F1AE89;
+}
+
+.cell[data-value="1024"]{
+    background-color: #9a88ff;
+}
+
+.cell[data-value="2048"]{
+    background-color: #FF7878;
+}
+
+.cell[data-value="4096"]{
+    background-color: #a9a9a9;
+}
+
+#restart-btn{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-cell[data-value]{
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.new-tile{
+    animation: appear 0.3s;
+}
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*bottom-buttons*/
+.bottom-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 333px;
+    margin-top:15px;
+}
+.bottom-button{
+    border: none;
+    cursor: pointer;
+    background-color: #8ca5a5;
+    color:#fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 1vmin;
+    padding: 5px;
+}
