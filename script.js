@@ -1,3 +1,5 @@
+document.addEventListener('touchmove', event => event.scale !== 1 && event.preventDefault(), { passive: false });
+
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid');
     const size = 4;
