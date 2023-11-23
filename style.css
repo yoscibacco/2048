@@ -77,7 +77,7 @@ body{
 /*Volume Buttons*/
 .volumeIcons{
     height: 56px;
-    width: auto;
+    width: 56px;
 }
 .volumeOn,.volumeOff{
     width: 100%;
