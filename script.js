@@ -168,6 +168,55 @@ document.addEventListener('DOMContentLoaded', () => {
             move(event.key);
         }
     });
+
+    /*----------------------------------*/
+    let touchStartX = 0;
+let touchStartY = 0;
+
+document.addEventListener('touchstart', touchStartHandler, false);
+document.addEventListener('touchmove', touchMoveHandler, false);
+
+function touchStartHandler(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+}
+
+function touchMoveHandler(event) {
+    if (!touchStartX || !touchStartY) {
+        return;
+    }
+
+    const touchEndX = event.touches[0].clientX;
+    const touchEndY = event.touches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal swipe
+        if (deltaX > 0) {
+            move('ArrowRight');
+        } else {
+            move('ArrowLeft');
+        }
+    } else {
+        // Vertical swipe
+        if (deltaY > 0) {
+            move('ArrowDown');
+        } else {
+            move('ArrowUp');
+        }
+    }
+
+    // Reset touch start coordinates
+    touchStartX = 0;
+    touchStartY = 0;
+}
+
+
+    /*------------------------------------*/
+
+
     document.getElementById('restart-btn').addEventListener('click', restartGame);
 
 
