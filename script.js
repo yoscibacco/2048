@@ -217,6 +217,19 @@ function touchMoveHandler(event) {
     /*------------------------------------*/
 
 
+    /*volume button change click*/
+    function volumeOn() {
+        document.getElementById("volumeOn").style.display = "none";
+        document.getElementById("volumeOff").style.display = "block";
+    }
+    document.getElementById('volumeOn').addEventListener('click', volumeOn);
+    function volumeOff() {
+        document.getElementById("volumeOff").style.display = "none";
+        document.getElementById("volumeOn").style.display = "block";
+    }
+    document.getElementById('volumeOff').addEventListener('click', volumeOff);
+    /*-------------------------------*/
+
     document.getElementById('restart-btn').addEventListener('click', restartGame);
 
 
