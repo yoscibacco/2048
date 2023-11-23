@@ -9,6 +9,7 @@ body{
     overflow: hidden;
     height: 100vh;
     background-color: #FFF3DA;
+    touch-action: pan-x pan-y;
 }
 
 .headerTitle{
